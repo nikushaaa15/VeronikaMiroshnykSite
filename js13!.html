@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ВГАДАЙ ЧИСЛО</title>
+    <style>
+        body {
+            background-color: rgb(103, 103, 233);
+        }
+        </style>
+</head>
+<body>
+    <script>
+        let numberUser;
+        letnumberX;
+        let counter = 0;
+        do { 
+            let numberX = prompt("ЗАГАДАЙТЕ ЧИСЛО ВІД 1 ДО 100", 0);
+            numberUser = prompt("ВГАДАЙТЕ ЧИСЛО ВІД 1 ДО 100", 0);
+            counter++;
+            if (numberUser === null){
+                alert ("Ми очікували від Вас число");
+            } else if (+numberUser > numberX){
+                alert("Ваше число менше");   
+            } else if (+numberUser < numberX){
+                alert("Ваше число більше");
+            } else {
+                alert ("ВИ ВГАДАЛИ !!! " + numberX + " за спроб: " + counter); 
+            }
+        } while (numberUser !== numberX && numberUser !== null);
+        //Кінець гри
+    </script>
+</body>
+</html>

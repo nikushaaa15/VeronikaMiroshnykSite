@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АНАЛІЗ ЦИФЕР</title>
+    <style>
+        body {
+            background-color: rgb(103, 103, 233);
+        }
+        p {
+            font-size: 30px;
+            color: lightcoral;
+            background-color: rgb(126, 126, 239);
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-shadow: #ffff8f;
+        }
+        div { background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            text-align: center;
+        }
+        </style>
+</head>
+<body>
+    <div id="content">
+
+        <form name="data_form" onsubmit="counter(); return false;">
+            <input type="number" name="numb" placeholder="Input a number"><br /><br />
+            <button type="submit" class="button-90" role="button">НАТИСНІТЬ</button>
+        </form>
+        <div id="signs"></div>
+    </div>
+    <script type="text/javascript">
+        function counter() {
+            let text = '';
+            let xy = document.data_form.numb.value;
+
+            if (isNaN(xy) || xy.trim() === "") {
+                document.getElementById('signs').innerHTML = "ВИ ВВЕЛИ НЕ ЧИСЛО!";
+            } else {
+                text += 'У ВАШОМУ ЧИСЛІ ' + xy.length;
+
+                let intxy = parseInt(xy);
+                if (intxy >= 10 && intxy <= 20) {
+                    text += ' ЦИФРИ';
+                } else {
+                    switch (intxy % 10) {
+                        case 1:
+                            text += ' ЦИФРИ';
+                            break;
+                        case 2:
+                        case 3:
+                        case 4:
+                            text += ' ЦИФРИ';
+                            break;
+                        default:
+                            text += ' ЦИФР';
+                            break;
+                    }
+                }
+                text += '<br />';
+
+                let sum = 0;
+                let odd = 0;
+                let even = 0;
+
+                for (let i = 0; i < xy.length; i++) {
+                    let coal = xy.charAt(i);
+                    let digit = parseInt(coal);
+                    sum += digit;
+
+                    if (digit % 2) {
+                        odd++;
+                    } else {
+                        even++;
+                    }
+                }
+                text += 'CУМА ВСІХ ЦИФР ЧИСЛА = ' + sum;
+                text += '<br />';
+                text += 'КІЛЬКІСТЬ ПАРНИХ ЧИСЕЛ = ' + even + '<br />' + 'КІЛЬКІСТЬ НЕПАРНИХ ЧИСЕЛ = ' + odd;
+
+                document.getElementById('signs').innerHTML = text;
+            }
+        }
+    </script>   
+</body>
+</html>

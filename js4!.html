@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>БАНКОМАТ</title>
+    <style>
+        body {
+            background-color: rgb(103, 103, 233);
+        }
+</style>
+</head>
+<body>
+    <script>
+        let money = prompt('Яку суму хочете зняти?');
+        if (money == null) {
+            alert('Ви скасували операцію зняття грошей.');
+        } else if (money < 50 || money > 3000) {
+            alert('На жаль, Ви можете зняти гроші на суму від 50 грн. до 3000 грн.');
+        } else if (money % 50 !== 0) {
+            alert('У банкоматі немає таких купюр!');
+        } else {
+            alert(`Заберіть ваші гроші: ${money} грн`);
+        }
+    </script>
+</body>
+</html>

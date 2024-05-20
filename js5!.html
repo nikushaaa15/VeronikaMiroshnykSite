@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПРОПУСК НА САЙТ ЗА ВІКОМ</title>
+    <style>
+        body {
+            background-color: rgb(103, 103, 233);
+        }
+        </style>
+</head>
+<body>
+    <script> 
+    let age = +prompt('ВКАЖІТЬ ВАШ ВІК: ', 0);
+    let years;
+    if (age % 10 == 1 && age % 100 != 11) {
+        years = "рік";
+    } else if ((age % 10 == 2 || age % 10 == 3 || age % 10 == 4) && !(age % 100 >= 12 && age % 100 <= 14)) {
+        years = "роки";
+    } else {
+        years = "років";
+    }
+    if (age >= 18 && age <= 100) {
+        alert(`Вам ${age} ${years}, ласкаво просимо на наш сайт!`);
+    } else {
+        alert(`Вам ${age} ${years}, тому ми не впевнені, що Ви наш клієнт.`);
+    }
+    </script>
+</body>
+</html>

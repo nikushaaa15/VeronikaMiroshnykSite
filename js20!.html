@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЗНАХОДЖЕННЯ ВВЕДЕНОЇ БУКВИ</title>
+    <style>
+         body {
+            background-color: rgb(103, 103, 233);
+        }
+
+        p {
+            font-size: 30px;
+            color: lightcoral;
+            background-color: rgb(126, 126, 239);
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-shadow: #ffff8f;
+        }
+        div { background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p class="main_name">Введіть число і Ви дізнаєтесь, яка літера українського алфавіту знаходиться під цим номером</p>
+    <div class="content">
+        <input type="text" class="number">
+        <button>НАТИСНІТЬ</button>
+        <div class="out"></div>
+    </div>
+    <div class="arrows">
+        <a href="../exam8/index.html"><i class="fa-solid fa-arrow-left"></i></a>
+        <a href="../../index.html" class="home"><i class="fa-solid fa-house"></i></a>
+        <a href="../exam10/index.html"><i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <script>
+        document.querySelector("button").onclick = myClick 
+        function myClick(){
+        let number = document.querySelector(".number").value
+         function alphabet(array, value){
+            for (let i = 0; i < array.length; i++){
+                if (i + 1 === Number(value)) return array[i];
+            }
+           return -1;
+         }
+
+         let arr = ['A','Б','В','Г','Ґ','Д','Е','Є','Ж','З','И','І','Ї','Й','К','Л','М','Н','О','П','Р','С','Т','У','Ф','Х','Ц','Ч','Ш','Щ','Ь','Ю','Я'];
+         document.querySelector(".out").innerHTML += "Під номером " + number + " знаходиться літера " + alphabet(arr, number);
+        } 
+    
+     </script>
+</body>
+</html>

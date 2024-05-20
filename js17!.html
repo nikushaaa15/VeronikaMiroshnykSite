@@ -1,0 +1,65 @@
+<!<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЗНАХОДЖЕННЯ ПІДРЯДКА У РЯДКУ</title>
+    <style>
+        body {
+            font-size: 50px;
+            text-align: center;
+        }
+        p {
+            font-size: 30px;
+            margin: 0;
+            margin-bottom: 20px;
+        }
+        input {
+            background-color: rgb(103, 103, 233);
+            color: rgb(247, 247, 120);;
+            height: 30px;
+            margin: auto 0;
+        }
+        .form_stile {
+            width: 700px;
+            min-height: 100px;
+            color: rgb(247, 247, 120);
+            background-color: rgb(136, 136, 238);
+            margin: auto auto;
+            margin-top: 10%;
+            padding: 50px 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form_stile">
+        <p>
+            Пошук рядка бр в рядку "Бурі бобри брід перебрели,
+            Забули бобри забрати торби"
+
+        </p>
+
+        <input class="btn" type="button" value="Розрахувати" onclick="calculatePositions()">
+        <div id="positions"></div>
+    </div>
+    
+    <script>
+        function calculatePositions() {
+            var text = "Бурі бобри брід перебрели, Забули бобри забрати торби";
+            var searchStr = "бр";
+            var positions = [];
+            var position = text.indexOf(searchStr);
+            while (position !== -1) {
+                positions.push(position);
+                position = text.indexOf(searchStr, position + 1);
+            }
+            if (positions.length > 0) {
+                document.getElementById("positions").innerHTML = "<p> Позиції збігів: " + positions.join(", ") + "</p>";
+            } else {
+                document.getElementById("positions").innerHTML = "<p> Збігів не знайдено </p>";
+            }
+        }
+    </script>
+</body>
+</html>

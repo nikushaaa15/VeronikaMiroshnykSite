@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СТЕПІНЬ</title>
+    <style>
+      body {
+          background-color: rgb(103, 103, 233);
+      }
+      </style>
+</head>
+<body>
+    <script>
+        /*
+function checkSum(sum) {
+  if (sum > 1000) {
+    return true;
+  } else {
+    return confirm('Для знижки вам необхідно вибрати ще товарів на сумму більше 1000 грн. Продовжуємо?');
+  }
+}
+let sum = +prompt('Вкажіть суму покупки?');
+ if (checkSum(sum)) {
+  alert( 'Знижка 20% забезпечена!' );
+} else {
+  alert( 'Нічого, у нас все одно низькі ціни!');
+}
+
+function max(x,y) {
+    if (x>y) {
+        return x;
+    
+    } else {
+return y;
+    } 
+}
+  alert (max (1,3)) ;
+  alert (max (81, 13))
+
+  function showHI (Username,Usersay) {
+if (Usersay===undefined) {
+    Usersay = `Хм...`;
+}
+Username = Username + ` сказав : `;
+alert (Username+Usersay)
+  }
+ showHI ('Данило', 'і тобі привіт! ');
+ alert ('Значення змінної ('+Username+') залишилося без змін ! ')
+*/
+function grade (x,n) {
+    let power = 1 
+    for (let i=1 ; i <= n ; i++) {
+        power*=x 
+    }
+    return power
+}
+
+
+let x= +prompt("ВВЕДІТЬ ЗНАЧЕННЯ X", "")
+let n= +prompt("ВВЕДІТЬ ЗНАЧЕННЯ СТЕПЕНІ N ДЛЯ X")
+alert(grade(x,n))
+    </script>
+</body>
+</html>

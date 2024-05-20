@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КОМПЛІМЕНТИ</title>
+    <style>
+        body {
+            background-color: rgb(103, 103, 233);
+            font-family: Georgia, Times, 'Times New Roman', serif;
+            font-size: 50px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <script>
+    let complimentes = ["smart", "clever", "nice", "polite", "amazing", "generous", "awesome", "creative", "kind", "genius", "fabulous", "attractive", "hard-working", "gorgeous", "great"];
+    let animals = ["cat", "fox", "bear", "lizard", "dog", "wolf", "goldfish", "snake", "parrot", "elephant", "giraffe", "frog", "monkey", "hamster", "beaver", "crow"];
+    let colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+    let number = +prompt("How many complimentes do you want?", 100);
+    let usedColors = [];
+
+    for (let i = 1; i <= number; i++) {
+        if (colors.length === 0) {
+            colors = usedColors;
+            usedColors = [];
+        }
+
+        let rand1 = Math.floor(Math.random() * complimentes.length);
+        let rand2 = Math.floor(Math.random() * animals.length);
+        let rand3 = Math.floor(Math.random() * colors.length);
+
+        let color = colors[rand3];
+        usedColors.push(color);
+        colors.splice(rand3, 1);
+
+        document.writeln(`<p style="color: white; background-color: ${color};"> ${i}) You are so ${complimentes[rand1]} as ${animals[rand2]}</p>`);
+    }
+    </script>
+</body>
+</html>

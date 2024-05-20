@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СУМА ЧИСЕЛ В ДІАПАЗОНІ</title>
+<style>
+    body{
+        background-color: rgb(103, 103, 233);
+        color: #d87093;
+        font-size: 25px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+</style>
+</head>
+<body>
+   <script>
+    /*let i = 4;
+while (i) {  
+alert( i );
+  i--;*/
+let min = + prompt ("ВВЕДІТЬ МІНІМАЛЬНЕ ЧИСЛО ДІАПАЗОНУ", 0)
+let max = + prompt ("ВВЕДІТЬ МАКСИМАЛЬНЕ ЧИСЛО ДІАПАЗОНУ", 100)
+let sum = 0
+for (let count = min; count <= max; count++) {
+    sum = sum + count
+}
+  document.writeln(`Сума чисел в діапазоні від  ${min} до ${max} дорівнює ${sum} `);
+   </script> 
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЗНАЙТИ СПАМ</title>
+</head> 
+<body>
+    <div class="container">
+        <label for="userText">Write your text:</label>
+        <input type="text" id="userText" placeholder="spam">
+        <button onclick="checkSpam()" class="button-15">Submit</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkSpam() {
+            const userText = document.getElementById('userText').value;
+            const resultDiv = document.getElementById('result');
+            
+            if (userText === '') {
+                resultDiv.innerHTML = "<div>There is no text</div>";
+                return;
+            }
+
+            const lowerCaseText = userText.toLowerCase();
+            const containsSpam = lowerCaseText.includes("free") || lowerCaseText.includes("spam");
+
+            if (containsSpam) {
+                resultDiv.innerHTML = "<div>Your text contains spam</div>";
+            } else {
+                resultDiv.innerHTML = "<div>Your text doesn't contain spam</div>";
+            }
+        }
+    </script>
+</body>
+</html>
